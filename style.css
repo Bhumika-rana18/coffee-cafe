@@ -1,0 +1,43 @@
+
+	table, th, td 
+	{
+  	border-style:none; 
+	}
+
+	.navbar 
+	{
+  	display: flex;
+  	align-items: center;
+  	background-color: black;
+  	padding: 10px 20px;
+	}
+	
+	.navbar-nav
+	{
+	color: black;
+	list-style: none;
+	padding: 10px;
+	margin: 20px;
+	display: flex;
+	gap: 25px;
+	}
+
+	.navbar img
+	{
+	height: 60px;
+	}
+
+	footer {
+      	background-color: #2b120c;
+      	color: white;
+      	padding: 40px 0;
+    	}
+	.footer a
+	{
+	color: #fff;
+	display: block;
+	margin-bottom: 5px;
+	}
+
+	
+

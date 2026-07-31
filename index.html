@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css"> 
+	<title>Coffee cafe | Fresh Coffee</title>
+	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="search.js"></script>
+</head>
+<style>
+    	body 
+	{
+        background-color: #b07d5a;
+    	}
+	.coffee-card 
+	{
+	background: #b07d5a;
+	padding: 15px;
+	border-radius: 12px;	
+    	}
+	.coffee-card img
+	{
+	width: 100px;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 10px;
+	}
+	
+</style>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+<!-- Brand/logo -->
+<a class="navbar-brand" href="index.html">
+
+<img src="coffeelogo.JPG" alt="logo" style="width:100px; height:100px;">
+</a>
+<div class="container">
+  <a class="navbar-brand text-white" href="index.html">
+	<button class="navbar-toggler" type="button" data-toggler="collapse" data target="#navbarNav">
+	<span class="navbar-toggler-icon"></span>
+	</button>
+  </a>
+  	<div class="collapse navbar-collapse justify-content-end" id="navBar">
+
+  <!-- Links -->
+  <ul class="navbar-nav ms-4">
+    <li class="nav-item me-3">
+      <a class="nav-link" href="index.html">Home</a>
+    </li>
+    <li class="nav-item me-3">
+      <a class="nav-link" href="register.html">Registration </a>
+    </li>
+    <li class="nav-item me-3">
+      <a class="nav-link" href="menu.html">Menu</a>
+    </li> 
+    <li class="nav-item me-3">
+      <a class="nav-link" href="coffee.html">Coffee</a>
+    </li>
+    <li class="nav-item me-3">
+      <a class="nav-link" href="gallery.html">Gallery </a>
+    </li>
+    <li class="nav-item me-3">
+      <a class="nav-link" href="login.html">Login</a>
+    </li>
+      <li class="nav-item me-3">
+    <a class="nav-link" href="cart.html">
+        🛒 Cart
+        <span class="badge bg-danger" id="cart-count">0</span>
+    </a>
+</li>
+      
+<form class="d-flex" id="searchBox">
+      <input class="form-control me-2" type="text" id="searchInput" placeholder="Search drink...">
+      <button class="btn btn-success" type="submit">Search</button>
+    </form>
+    </ul>
+
+</div>
+</div>
+</nav>
+
+<div class="container-fluid main">
+	<div style="display: flex; align-items: center; justify-content: space-between;">
+	<img src="coffeebg1.JPG" alt="coffeebg" style="width:2000px; height:400px;">
+	</div>
+<br><br>
+<div class="container" style="margin-top:30px;">
+
+  <h1>TOP CATEGORIES</h1>
+  <p>Explore the recent most bought drinks this week</p>
+<div class="container-fluid text-center mt-5">
+
+</div>
+
+<button id="coffeeBtn" class="btn btn-primary mt-3">Show coffees</button>
+</div>
+</div>
+
+<div class="container-fluid mt-5" id="coffeemenu" style="display:none;">
+   <h3 class="text-center mb-4">Coffee Varieties</h3>
+
+
+ <div class="row">
+
+    <div class="col-md-3 text-center">
+
+	<div class="coffee-card" data-name="hot chocolate">
+      <img src="hotchocolate.JPG" style="width:200px; height:200px" alt="hot chocolate">
+      <h2>Hot Chocolate</h2>
+      	</div>
+   </div>
+
+    <div class="col-md-3 text-center">
+	<div class="coffee-card" data-name="espresso coffee">
+      <img src="espressocoffee.JPG" style="width:200px; height:200px" alt="espresso coffee">
+      <h2>Espresso Coffee</h2>
+    	</div>
+    </div>
+
+
+   <div class="col-md-3 text-center">
+	<div class="coffee-card" data-name="mocha coffee">
+      <img src="mochacoffee.JPG" style="width:200px; height:200px" alt="mocha coffee">
+      <h2>Mocha Coffee</h2>
+	</div>    	
+   </div>
+
+    <div class="col-md-3 text-center">
+	<div class="coffee-card" data-name="latte coffee">
+      <img src="lattecoffee.JPG"style="width:200px; height:200px" alt="latte coffee">
+      <h2>Latte Coffee</h2>
+    	</div>
+   </div>
+</div>
+</div>
+
+
+<div class="container" style="margin-top:30px;">
+  <h1>TOP MILK SHAKES</h1>
+  <p>Explore the recent most bought shakes this week</p>
+<div class="container-fluid text-center mt-5">
+</div>
+<button id="milkshakesBtn" class="btn btn-primary mt-3">Show Milk Shakes</button>
+</div>
+</div>
+<div class="container-fluid mt-5" id="milkshakesmenu" style="display:none;">
+   <h3 class="text-center mb-4">Desserts Varieties</h3>
+
+
+  <div class="row">
+    <div class="col-md-3 text-center">
+      <div class="coffee-card" data-name="biscoff milkshake">
+        <img src="Biscoff Milkshake.JPG" style="width:200px; height:200px" alt="biscoff milkshake">
+        <h2>Biscoff Milkshake</h2>
+      </div>
+    </div>
+
+<div class="col-md-3 text-center">
+      <div class="coffee-card" data-name="salted caramel">
+        <img src="Salted Caramel.JPG" style="width:200px; height:200px">
+        <h2>Salted Caramel</h2>
+       
+      </div>
+    </div>
+
+    <div class="col-md-3 text-center">
+      <div class="coffee-card" data-name="chocolate shake">
+        <img src="Chocolate Shake.JPG" style="width:200px; height:200px">
+        <h2>Chocolate Shake</h2>
+      </div>
+    </div>
+ <div class="col-md-3 text-center">
+      <div class="coffee-card" data-name="oreo shake">
+        <img src="Oreo Shake.JPG" style="width:200px; height:200px">
+        <h2>Oreo Shake</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<footer class="bg-dark text-white text-center py-4 mt-5">
+  <h5>About Us</h5>
+  <p class="mb-0">© 2026 Coffee Cafe. All Rights Reserved.</p>
+</footer>
+
+<script>
+$(document).ready(function(){
+    $("#coffeeBtn").click(function(){
+        $("#coffeemenu").toggle();
+
+	if ($("#coffeemenu").is(":visible")) {
+            $(this).text("Hide Coffees");
+        } else {
+            $(this).text("Show Coffees");
+        }
+	
+    });
+
+ $("#milkshakesBtn").click(function(){
+        $("#milkshakesmenu").toggle();
+
+	if ($("#milkshakesmenu").is(":visible")) {
+            $(this).text("Hide Milk Shakes");
+        } else {
+            $(this).text("Show Milk Shakes");
+        }
+	
+    });
+
+});
+
+
+</script>
+<script>
+
+$(document).ready(function(){
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    $("#cart-count").text(cart.length);
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Coffee Cafe | Invoice</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="search.js"></script>
+<style>
+body{
+    background:#b07d5a;
+}
+
+.invoice-box{
+    max-width:800px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+}
+
+h2{
+    text-align:center;
+}
+
+table{
+    margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="invoice-box">
+
+<h2>☕ Coffee Cafe</h2>
+
+<h4 class="text-center">Invoice</h4>
+
+<hr>
+
+<h5>Customer Details</h5>
+
+<p><strong>Name :</strong> <span id="custName"></span></p>
+
+<p><strong>Mobile :</strong> <span id="custMobile"></span></p>
+
+<p><strong>Address :</strong> <span id="custAddress"></span></p>
+
+<p><strong>Payment :</strong> <span id="custPayment"></span></p>
+
+<hr>
+
+<table class="table table-bordered">
+
+<thead>
+
+<tr>
+
+<th>Coffee</th>
+<th>Price</th>
+<th>Qty</th>
+<th>Total</th>
+
+</tr>
+
+</thead>
+
+<tbody id="invoiceBody">
+
+</tbody>
+
+</table>
+
+<h5 class="text-end">
+
+Total : ₹ <span id="total"></span>
+
+</h5>
+
+<h5 class="text-end text-success">
+
+20% Discount : ₹ <span id="discount"></span>
+
+</h5>
+
+<h4 class="text-end text-danger">
+
+Final Amount : ₹ <span id="finalTotal"></span>
+
+</h4>
+
+<div class="text-center mt-4">
+
+<button class="btn btn-primary" onclick="window.print()">
+
+Print Invoice
+
+</button>
+
+<a href="success.html" class="btn btn-success">
+
+Order Successful
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let customer = JSON.parse(localStorage.getItem("customer"));
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+document.getElementById("custName").innerHTML = customer.name;
+document.getElementById("custMobile").innerHTML = customer.mobile;
+document.getElementById("custAddress").innerHTML = customer.address;
+document.getElementById("custPayment").innerHTML = customer.payment;
+
+let total = 0;
+
+cart.forEach(function(item){
+
+let row = `
+<tr>
+
+<td>${item.name}</td>
+
+<td>₹${item.price}</td>
+
+<td>${item.quantity}</td>
+
+<td>₹${item.price * item.quantity}</td>
+
+</tr>
+`;
+
+document.getElementById("invoiceBody").innerHTML += row;
+
+total += item.price * item.quantity;
+
+});
+
+let discount = total * 0.20;
+
+let finalAmount = total - discount;
+
+document.getElementById("total").innerHTML = total;
+
+document.getElementById("discount").innerHTML = discount;
+
+document.getElementById("finalTotal").innerHTML = finalAmount;
+
+</script>
+
+</body>
+</html>

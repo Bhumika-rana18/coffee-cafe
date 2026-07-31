@@ -1,0 +1,10 @@
+{
+  "menu": [
+    { "name": "Espresso", "desc": "Coffee's feisty cousin", "price": "250" },
+    { "name": "Flat White", "desc": "Creamy smooth coffee", "price": "350" },
+    { "name": "Mocha", "desc": "Chocolate coffee magic", "price": "650" },
+    { "name": "Latte Coffee", "desc": "Milky coffee delight", "price": "750" },
+    { "name": "Iced Coffee", "desc": "Chilled java", "price": "450" },
+    { "name": "Hot Chocolate", "desc": "Sizzling cocoa", "price": "550" }
+  ]
+}
